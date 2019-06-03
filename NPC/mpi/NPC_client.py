@@ -22,13 +22,13 @@ class Client(object):
 
     def __init__(self, options):
         self.options = options
-        #self.detector = InitDetector(self.options)
-        #self.options['shape'] = self.detector.shape
+        self.detector = InitDetector(self.options)
+        self.options['shape'] = self.detector.shape
         self.options['rank'] = rank
-        #self.roi = ROI(self.options, self.detector.shape)
+        self.roi = ROI(self.options, self.detector.shape)
         #self.MaxProj = np.zeros(self.args.detector.shape)
-        #self.SaveHits = SH(self.options)
-        #self.DataCorrection = Correction(self.options, self.detector, self.roi)
+        self.SaveHits = SH(self.options)
+        self.DataCorrection = Correction(self.options, self.detector, self.roi)
         self.Ntotal = 0
         self.Nerr = 0
         self.Nhits = 0
