@@ -27,7 +27,7 @@ class Client(object):
         self.options['rank'] = rank
         self.roi = ROI(self.options, self.detector.shape)
         #self.MaxProj = np.zeros(self.args.detector.shape)
-        self.SaveHits = SH(self.options)
+        #self.SaveHits = SH(self.options)
         self.DataCorrection = Correction(self.options, self.detector, self.roi)
         self.Ntotal = 0
         self.Nerr = 0
