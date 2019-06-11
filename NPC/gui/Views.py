@@ -661,8 +661,11 @@ class ImageViewOnline(ImageView):
             #self.sendReq = True
 
         except:
-            tmp = self.zmqSocket.recv()
-            #print tmp
+            try:
+                tmp = self.zmqSocket.recv()
+                #print tmp
+            except:
+                print("BioMAX debug - critical error")
 
 
 class MaxProjViewOnline(ImageViewOnline):
